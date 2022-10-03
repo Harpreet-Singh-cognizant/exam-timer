@@ -1,0 +1,229 @@
+.main_section {
+  background-repeat: repeat;
+  background-color: $dark-primary;
+  background-size: 100%;
+  overflow: hidden;
+  position: relative;
+
+  .settings,
+  .editIcon {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background-color: $dark-primary;
+      z-index: -1;
+      display: none;
+    }
+    background-color: transparent;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 16px;
+  }
+  .loveIcon {
+    position: absolute;
+    display: block;
+    bottom: 1.5%;
+    right: 1.5%;
+    background-color: transparent;
+    z-index: 1;
+    .love {
+      width: 32px;
+      height: 32px;
+    }
+    // &::after {
+    //   display: none;
+    // }
+  }
+
+  .editIcon {
+    top: -0.25%;
+    right: 3%;
+    &::after {
+      background-color: $text-white;
+      display: block;
+    }
+    .edit {
+      width: 32px;
+      height: 32px;
+    }
+    // &::after {
+    //   display: none;
+    // }
+  }
+  .main_area {
+    background-repeat: no-repeat;
+    background-position: 0% 110%;
+    background-size: 100%;
+    .timer_area {
+      position: relative;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: start;
+      .message_area {
+        margin: 116px;
+        .main_text {
+          text-align: center;
+          color: $white;
+          text-transform: uppercase;
+          letter-spacing: 13px;
+          font-size: 24px;
+          font-weight: 700;
+        }
+      }
+      .counter_area {
+        .flip_card {
+          position: relative;
+          .card_area {
+            margin: 0 20px;
+            flex-direction: column;
+            perspective: 1000px;
+
+            &_animated {
+              position: absolute;
+              top: 0;
+              left: 0;
+
+              .upper_card,
+              .lower_card {
+                &_animate {
+                  transform-style: preserve-3d;
+                }
+              }
+              .upper_card {
+                transform-origin: bottom;
+                transform: rotateX(90deg);
+                &_animate {
+                  animation: flipdown 1s ease-in;
+                  @keyframes flipdown {
+                    0% {
+                      transform: rotateX(0deg);
+                    }
+                    50% {
+                      transform: rotateX(-90deg);
+                    }
+                    100% {
+                      transform: rotateX(-90deg);
+                    }
+                  }
+                }
+              }
+              .lower_card {
+                // transform: rotateX(90deg);
+                transform-origin: 100% 0px;
+                transform: rotateX(90deg);
+
+                &_animate {
+                  animation: flipup 1s ease-out;
+
+                  // transform: rotateX(-0deg);
+                  @keyframes flipup {
+                    0% {
+                      transform: rotateX(90deg);
+                    }
+                    50% {
+                      transform: rotateX(90deg);
+                    }
+                    100% {
+                      transform: rotateX(0deg);
+                    }
+                  }
+                }
+              }
+            }
+            .upper_card,
+            .lower_card {
+              overflow: hidden;
+              .count {
+                font-size: 96px;
+                color: $text-pink;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 0;
+                line-height: 0;
+                font-weight: 900;
+              }
+              position: relative;
+              &::before,
+              &::after {
+                content: "";
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                background-color: $float-dot;
+              }
+
+              width: 224px;
+              height: 80px;
+            }
+            .upper_card {
+              position: relative;
+              border-radius: 10px 10px 0px 0px;
+              background-color: $card-dull;
+              &::before {
+                left: 0;
+                bottom: 0;
+                border-radius: 0 100% 0 0;
+              }
+              &::after {
+                bottom: 0;
+                right: 0;
+                border-radius: 100% 0 0 0;
+              }
+              .count {
+                color: $text-pink;
+                bottom: 0;
+              }
+            }
+            .lower_card {
+              &::before {
+                left: 0;
+                top: 0;
+                border-radius: 0 0 100% 0;
+              }
+              &::after {
+                top: 0;
+                right: 0;
+                border-radius: 0 0 0 100%;
+              }
+              border-radius: 0px 0px 10px 10px;
+              background-color: $card-bright;
+              .count {
+                color: $text-pink-light;
+                top: 0;
+              }
+            }
+            .time {
+              color: $text-white;
+              font-size: 16px;
+              letter-spacing: 11px;
+              text-transform: uppercase;
+              font-weight: 900;
+              text-align: center;
+              margin: 24px 0;
+            }
+          }
+        }
+      }
+      .bot_text {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 32px 0;
+        color: $text-white;
+        font-size: 11px;
+        font-weight: 900;
+      }
+    }
+  }
+}

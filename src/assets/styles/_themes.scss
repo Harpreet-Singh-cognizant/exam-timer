@@ -1,0 +1,229 @@
+.main_section {
+  &_light {
+    background-color: $white;
+    transition: $transition;
+    .settings {
+      &::after {
+        display: block;
+      }
+    }
+
+    .editIcon {
+      &::after {
+        display: none;
+      }
+    }
+
+    .main_area {
+      .timer_area {
+        .message_area {
+          .main_text {
+            color: $text-pink-light;
+            transition: $transition;
+          }
+        }
+        .counter_area {
+          .flip_card {
+            .card_area {
+              .upper_card,
+              .lower_card {
+                transition: $transition;
+                &::before,
+                &:after {
+                  background-color: $white;
+                  transition: $transition;
+                }
+                .count {
+                  color: $text-white;
+                  transition: $transition;
+                }
+              }
+              .upper_card {
+                background-color: $card-bright;
+              }
+              .lower_card {
+                background-color: $text-white;
+
+                .count {
+                  color: $white;
+                }
+              }
+              .time {
+                color: $text-pink-light;
+                transition: $transition;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &_love {
+    background-color: $text-white;
+    transition: $transition;
+    .settings {
+      &::after {
+        display: block;
+      }
+    }
+    .editIcon {
+      &::after {
+        display: none;
+      }
+    }
+    .main_area {
+      .timer_area {
+        .message_area {
+          .main_text {
+            color: $card-dull;
+            transition: $transition;
+          }
+        }
+        .counter_area {
+          .flip_card {
+            .card_area {
+              .upper_card,
+              .lower_card {
+                transition: $transition;
+                &::before,
+                &:after {
+                  background-color: $text-white;
+                }
+                .count {
+                  transition: $transition;
+                  color: $card-dull;
+                }
+              }
+              .upper_card {
+                background-color: $text-pink;
+              }
+              .lower_card {
+                background-color: $text-pink-light;
+
+                .count {
+                  color: $card-bright;
+                }
+              }
+              .time {
+                color: $card-dull;
+                transition: $transition;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.light_modal {
+  .modal-dialog {
+    .modal-content {
+      background-color: $card-dull;
+      .modal-body {
+        .modal_text {
+          color: $text-white;
+        }
+        .react-datetime-picker {
+          .react-datetime-picker__wrapper {
+            background-color: $text-pink;
+            border-color: $text-pink;
+            .react-datetime-picker__inputGroup {
+              color: $white;
+              input,
+              select {
+                color: $white;
+              }
+            }
+          }
+          .react-datetime-picker__calendar {
+            .react-calendar {
+              background-color: $white;
+              border-color: $white;
+              button {
+                color: $card-dull;
+                &:hover,
+                &:focus {
+                  background-color: $text-white;
+                }
+              }
+              .react-calendar__tile--now {
+                background-color: $text-pink;
+              }
+              .react-calendar__tile--active {
+                background-color: $white;
+              }
+              .react-calendar__tile--hasActive {
+                background-color: $text-white;
+              }
+              .react-calendar__month-view__weekdays {
+                .react-calendar__month-view__weekdays__weekday {
+                  color: $text-white;
+                }
+              }
+            }
+          }
+        }
+        .set_btn {
+          color: $white;
+          background-color: $text-pink;
+        }
+      }
+    }
+  }
+}
+.love_modal {
+  .modal-dialog {
+    .modal-content {
+      background-color: $text-pink;
+      .modal-body {
+        .modal_text {
+          color: $dark-primary;
+        }
+        .react-datetime-picker {
+          .react-datetime-picker__wrapper {
+            background-color: $text-white;
+            border-color: $text-white;
+            .react-datetime-picker__inputGroup {
+              color: $card-dull;
+              input,
+              select {
+                color: $card-dull;
+              }
+            }
+          }
+          .react-datetime-picker__calendar {
+            .react-calendar {
+              background-color: $text-white;
+              border-color: $text-white;
+              button {
+                color: $card-dull;
+                &:hover,
+                &:focus {
+                  background-color: $white;
+                }
+              }
+              .react-calendar__tile--now {
+                background-color: $text-pink;
+              }
+              .react-calendar__tile--active {
+                background-color: $white;
+              }
+              .react-calendar__tile--hasActive {
+                background-color: $white;
+              }
+              .react-calendar__month-view__weekdays {
+                .react-calendar__month-view__weekdays__weekday {
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
+        .set_btn {
+          color: $card-dull;
+          background-color: $text-white;
+        }
+      }
+    }
+  }
+}
