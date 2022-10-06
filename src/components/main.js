@@ -102,7 +102,7 @@ const Main = (props) => {
           countdownMinutes: ("0" + totalMinutes).slice(-2),
           cM: ("0" + (totalMinutes + 1)).slice(-2),
           countdownSeconds: ("0" + totalSeconds).slice(-2),
-          cS: totalSeconds === 59 ? "00" : ("0" + (totalSeconds + 1)).slice(-2),
+          cS: totalSeconds === 59 ? "00" : ("0" + (totalSeconds - 1)).slice(-2),
         };
 
         setCountdownTime(runningCountdownTime);
@@ -122,8 +122,8 @@ const Main = (props) => {
   useEffect(() => {
     if (childData) {
       const newTime = moment(JSON.stringify(childData).replace(/[ZT"]/g, " "))
-        .add(17.5, "hours")
-        .format("DD MMM YYYY h:mm:ss");
+        .add(5.5, "hours")
+        .format("DD MMM YYYY HH:mm:ss");
       setNewData(newTime);
       console.log("raw", childData);
       console.log("new", newTime);
@@ -270,7 +270,7 @@ const Main = (props) => {
                                 }
                               >
                                 <span className="count">
-                                  {k === 3 || k === 2 ? i[1] : i[0]}
+                                  {k === 3 ? i[1] : i[0]}
                                 </span>
                               </div>
                             </div>

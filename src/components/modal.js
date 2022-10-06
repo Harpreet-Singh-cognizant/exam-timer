@@ -6,6 +6,7 @@ import DateTimePicker from "react-datetime-picker";
 const ModalComponent = (props) => {
   const [value, onChange] = useState(new Date());
   const [show, setShow] = useState(false);
+
   const sendData = (value) => {
     props.passchild(value);
   };
@@ -41,7 +42,12 @@ const ModalComponent = (props) => {
         <Modal.Body>
           <p className="modal_text">Select Date and Time</p>
           <div className="align_box flexie ">
-            <DateTimePicker onChange={onChange} value={value} on />
+            <DateTimePicker
+              format={"dd/MM/y h:mm:ss a"}
+              onChange={onChange}
+              value={value}
+              on
+            />
             <button
               className="set_btn"
               onClick={() => {
